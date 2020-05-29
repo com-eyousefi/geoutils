@@ -1,4 +1,5 @@
 # geoutils
+![Java CI](https://github.com/com-eyousefi/geoutils/workflows/Java%20CI/badge.svg)
 A small library for geo-location calculation written in Java
 
 ## Usage
