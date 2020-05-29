@@ -4,7 +4,7 @@ import com.eyousefi.service.LocationService;
 
 public class LocationServiceBuilder {
 
-    public LocationService build() {
-        return new DefaultLocationService();
-    }
+  public LocationService build() {
+    return new DefaultLocationService();
+  }
 }
