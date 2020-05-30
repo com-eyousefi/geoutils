@@ -27,9 +27,9 @@ jobs:
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
       - name: Configure Git
-          run: |
-            git config --global user.name "GitHub Action"
-            git config --global user.email "oss@eyousefi.com"
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "oss@eyousefi.com"
       - name: Build with Maven
         run: mvn -P release -B gitflow:release -DpostReleaseGoals=deploy -DargLine="-Dgpg.passphrase=${GPG_PASSWORD}" --file pom.xml
         env:
