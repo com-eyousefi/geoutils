@@ -28,7 +28,7 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "oss@eyousefi.com"
       - name: Build with Maven
-        run: mvn -B gitflow:release -DpostReleaseGoals=deploy -DargLine="-P release -Dgpg.passphrase=${GPG_PASSWORD}"
+        run: mvn -B gitflow:release -DpostReleaseGoals="clean deploy" -DargLine="-P release -Dgpg.passphrase=${GPG_PASSWORD}"
         env:
           GPG_PASSWORD: ${{ secrets.GPG_PASSWORD }}
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
