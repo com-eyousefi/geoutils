@@ -17,9 +17,6 @@ jobs:
           server-id: ossrh
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
-        env:
-          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
       - name: Set up GPG
         run: |
           echo "$GPG_PRIVATE_KEY" > private.asc
@@ -34,6 +31,8 @@ jobs:
         run: mvn -P release -B gitflow:release -DpostReleaseGoals=deploy -DargLine="-Dgpg.passphrase=${GPG_PASSWORD}" --file pom.xml
         env:
           GPG_PASSWORD: ${{ secrets.GPG_PASSWORD }}
+          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
       - name: Cache Maven packages
         uses: actions/cache@v2
         with:
