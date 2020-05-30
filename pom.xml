@@ -23,7 +23,7 @@
   <scm>
     <connection>scm:git:ssh://git@github.com:com-eyousefi/geoutils.git</connection>
     <developerConnection>scm:git:ssh://git@github.com:com-eyousefi/geoutils.git</developerConnection>
-    <url>https://github.com/infor-cloud/xtendm3-sdk-java/</url>
+    <url>https://github.com/com-eyousefi/geoutils/</url>
   </scm>
 
   <distributionManagement>
